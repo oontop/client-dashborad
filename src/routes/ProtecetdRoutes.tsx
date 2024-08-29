@@ -1,4 +1,4 @@
-///ProtecetdRoutes.tsx
+/* ///ProtecetdRoutes.tsx
 import { useContext } from "react";
 
 import { AuthContext } from "../contexts/AuthContext";
@@ -11,4 +11,4 @@ const ProtectedRoutes: FCC = ({ children }) => {
     return <>{children}</>;
 };
 
-export default ProtectedRoutes;
+export default ProtectedRoutes; */

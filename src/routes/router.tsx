@@ -6,14 +6,14 @@ import { createBrowserRouter } from "react-router-dom";
 
 import Home from "../pages/Home.tsx";
 import Dashboard from "../pages/Dashboard.tsx";
-import ProtectedRoutes from "./ProtecetdRoutes.tsx";
+/* import ProtectedRoutes from "./ProtecetdRoutes.tsx"; */
 import About from "../pages/About.tsx";
 import MonthlyDisplay from "../components/MonthlyDisplay.tsx";
-import Profile from "../pages/Profile.tsx";
+/* import Profile from "../pages/Profile.tsx";
 import Login from "../pages/Login.tsx";
 import Register from "../pages/Register.tsx";
 import CRM from "../pages/CRM.tsx";
-import UserEdit from "../pages/UserEdit.tsx";
+import UserEdit from "../pages/UserEdit.tsx"; */
 import Terms from "../pages/Terms.tsx";
 import Privacy from "../pages/Privacy.tsx";
 import Support from "../pages/Support.tsx";
@@ -33,75 +33,75 @@ export const router = createBrowserRouter([
         errorElement: "/",
         children: [
             { index: true, element: <Home /> },
-            { path: "/login", element: <Login /> },
-            { path: "/register", element: <Register /> },
+            /* { path: "/login", element: <Login /> },
+            { path: "/register", element: <Register /> }, */
             {
                 path: "/about", element:
-                    <ProtectedRoutes>
-                        <About />
-                    </ProtectedRoutes>
+                    /*  <ProtectedRoutes> */
+                    <About />
+                /*  </ProtectedRoutes> */
             },
             {
                 path: "/dashboard", element:
-                    <ProtectedRoutes>
-                        <Dashboard />
-                    </ProtectedRoutes>
+                    /*   <ProtectedRoutes> */
+                    <Dashboard />
+                /*  </ProtectedRoutes> */
             },
             {
                 path: "/monthlydisplay", element:
-                    <ProtectedRoutes>
-                        <MonthlyDisplay />
-                    </ProtectedRoutes>
+                    /*       <ProtectedRoutes> */
+                    <MonthlyDisplay />
+                /*  </ProtectedRoutes> */
             },
-            {
-                path: "/profile", element: (
-                    <ProtectedRoutes>
-                        <Profile />
-                    </ProtectedRoutes>
-                )
-            },
-            {
-                path: "/crm", element: (
-                    <ProtectedRoutes>
-                        <CRM />
-                    </ProtectedRoutes>
-                )
-            },
-            {
-                path: "/profile/:id", element:
-                    <ProtectedRoutes>
-                        <UserEdit />
-                    </ProtectedRoutes>
-            },
+            /*  {
+                 path: "/profile", element: (
+                     <ProtectedRoutes> 
+                         <Profile />
+                     </ProtectedRoutes> 
+                 )
+             }, */
+            /*  {
+                 path: "/crm", element: (
+                     <ProtectedRoutes>
+                         <CRM />
+                     </ProtectedRoutes>
+                 )
+             }, */
+            /*  {
+                 path: "/profile/:id", element:
+                     <ProtectedRoutes>
+                         <UserEdit />
+                     </ProtectedRoutes>
+             }, */
             {
                 path: "/terms", element:
-                    <ProtectedRoutes>
-                        <Terms />
-                    </ProtectedRoutes>
+                    /* <ProtectedRoutes> */
+                    < Terms />
+                /*  </ProtectedRoutes> */
             },
             {
                 path: "/privacy", element:
-                    <ProtectedRoutes>
-                        <Privacy />
-                    </ProtectedRoutes>
+                    /*  <ProtectedRoutes> */
+                    <Privacy />
+                /*   </ProtectedRoutes> */
             },
             {
                 path: "/support", element:
-                    <ProtectedRoutes>
-                        <Support />
-                    </ProtectedRoutes>
+                    /*  <ProtectedRoutes> */
+                    <Support />
+                /*  </ProtectedRoutes> */
             },
             {
                 path: "/faq", element:
-                    <ProtectedRoutes>
-                        <FAQ />
-                    </ProtectedRoutes>
+                    /*  <ProtectedRoutes> */
+                    <FAQ />
+                /* </ProtectedRoutes> */
             },
             {
                 path: "/settings", element:
-                    <ProtectedRoutes>
-                        <Settings />
-                    </ProtectedRoutes>
+                    /* <ProtectedRoutes> */
+                    <Settings />
+                /*  </ProtectedRoutes> */
             },
 
 

@@ -1,7 +1,7 @@
 ///types.d.ts
 import { ReactNode } from "react";
 
-export type LoginUser = {
+/* export type LoginUser = {
     email: string;
     password: string;
 };
@@ -31,7 +31,7 @@ export type RegisterUser = {
     };
     isBusiness: boolean;
 };
-
+ */
 
 export type IPatient = {
     [x: string]: any;
@@ -54,7 +54,7 @@ export type IPatient = {
     userActivity: string;
     comments: string;
     treatmentDuration?: number;
-    comments: CommentType[];
+    /*   comments: CommentType[]; */
     createdAt: string;
     __v: number;
 
@@ -62,7 +62,7 @@ export type IPatient = {
 
 
 
-export type CommentType = {
+/* export type CommentType = {
     [x: string]: any;
     user: {
         _id: string;
@@ -82,14 +82,14 @@ export type CommentType = {
         createdAt: string;
     };
 };
-
+ */
 export type ErrorType = {
     status: number;
     message: string
     details: string;
 };
 
-export type JwtDecodeType = {
+/* export type JwtDecodeType = {
     _id: string;
     iat: number;
     exp: number;
@@ -110,7 +110,7 @@ export type AuthContextType = {
 
 export type AuthContextProviderProps = {
     children: ReactNode;
-};
+}; */
 
 export type ThemeProviderProps = {
     children: ReactNode;

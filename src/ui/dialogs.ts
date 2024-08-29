@@ -36,7 +36,7 @@ export const showErrorDialog = (title: string, text: string) => {
 
 
 
-export const showSuccessCreate = (title: string, text: string) => {
+export const showSuccessCreate = () => {
     return Swal.fire({
         title: "Your work has been saved",
 

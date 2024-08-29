@@ -1,4 +1,4 @@
-///Profile.tsx
+/* ///Profile.tsx
 import { useEffect, useState } from "react";
 import { userDetails } from "../services/auth";
 import { RegisterUser } from "../@types/types";
@@ -99,3 +99,4 @@ const Profile = () => {
 };
 
 export default Profile;
+ */

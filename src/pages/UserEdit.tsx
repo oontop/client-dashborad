@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+/* import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { RegisterUser } from "../@types/types";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
@@ -278,3 +278,4 @@ const UserEdit = () => {
 };
 
 export default UserEdit;
+ */

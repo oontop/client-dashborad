@@ -1,4 +1,4 @@
-///CRM.tsx
+/* ///CRM.tsx
 import React, { useState, useEffect } from "react";
 import { deleteUser, getUsers } from "../services/auth";
 import { RegisterUser } from "../@types/types";
@@ -114,3 +114,4 @@ const CRM: React.FC = () => {
 };
 
 export default CRM;
+ */

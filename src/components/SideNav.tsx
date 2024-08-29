@@ -1,20 +1,20 @@
-import { useState } from 'react';
+/* import { useState } from 'react'; */
 import { useMenu } from '../contexts/MenuContext';
-import { FiUser, FiSettings, FiLogIn, FiUserPlus, FiChevronDown, FiHome, FiGrid, FiHelpCircle, FiInfo, FiPhone, FiFileText } from 'react-icons/fi';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from "../hooks/useAuth";
+import { /* FiUser, */ FiSettings, /* FiLogIn, FiUserPlus, FiChevronDown, */ FiHome, FiGrid, FiHelpCircle, FiInfo, FiPhone, FiFileText } from 'react-icons/fi';
+import { Link/* , useNavigate */ } from 'react-router-dom';
+/* import { useAuth } from "../hooks/useAuth"; */
 
 const SideNav = () => {
   const { isOpen, toggleMenu } = useMenu();
-  const [isAccountOpen, setIsAccountOpen] = useState(false);
+  /* const [isAccountOpen, setIsAccountOpen] = useState(false); */
 
-  const { isLoggedIn, isBusiness, logout } = useAuth();
+  /*  const { isLoggedIn, isBusiness, logout } = useAuth(); */
 
-  const navigate = useNavigate();
+  /* const navigate = useNavigate();
 
   const toggleAccountNav = () => {
     setIsAccountOpen(!isAccountOpen);
-  };
+  }; */
 
   return (
     <>
@@ -36,18 +36,18 @@ const SideNav = () => {
                 <Link to="/" onClick={toggleMenu}>Home</Link>
               </li>
 
-              {isLoggedIn && isBusiness &&
+              {/* isLoggedIn && isBusiness && */
                 <li className="p-4 hover:bg-blue-100 flex items-center">
                   <FiGrid className="w-6 h-6 mr-2 text-blue-600" />
                   <Link to="/dashboard" onClick={toggleMenu}>Dashboard</Link>
                 </li>
               }
-              {isLoggedIn &&
+              {/* {isLoggedIn &&
                 <li className="p-4 hover:bg-blue-100 flex items-center">
                   <FiUser className="w-6 h-6 mr-2 text-blue-600" />
                   <Link to="/profile" onClick={toggleMenu}>Profile</Link>
                 </li>
-              }
+              } */}
 
               <li className="p-4 hover:bg-blue-100 flex items-center">
                 <FiSettings className="w-6 h-6 mr-2 text-blue-600" />
@@ -86,7 +86,7 @@ const SideNav = () => {
                 <Link to="/privacy" onClick={toggleMenu}>Privacy Policy</Link>
               </li>
 
-              <li className="p-4 hover:bg-blue-100">
+              {/* <li className="p-4 hover:bg-blue-100">
                 <button
                   onClick={toggleAccountNav}
                   className="flex justify-between w-full focus:outline-none"
@@ -123,7 +123,7 @@ const SideNav = () => {
                     )}
                   </ul>
                 )}
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>

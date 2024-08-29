@@ -1,4 +1,4 @@
-///auth.ts
+/* ///auth.ts
 import axios from "axios";
 import { LoginUser, RegisterUser } from "../@types/types";
 
@@ -75,4 +75,4 @@ export const auth = {
 
 };
 
-export default auth;
+export default auth; */
