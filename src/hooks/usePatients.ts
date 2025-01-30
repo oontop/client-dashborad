@@ -12,17 +12,17 @@ export const usePatients = () => {
     useEffect(() => {
         setError(null);
         setLoading(true);
-        patientInfo.getPatientInfo()
-            .then((res) => {
-                setPatients(res.data);
-                setError(null);
-            })
-            .catch(() => {
-                setError("Network error");
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+        // patientInfo.getPatientInfo()
+        //     .then((res) => {
+        //         setPatients(res.data);
+        //         setError(null);
+        //     })
+        //     .catch(() => {
+        //         setError("Network error");
+        //     })
+        //     .finally(() => {
+        //         setLoading(false);
+        //     });
     }, []);
 
     return { patients, loading, error, setPatients };
