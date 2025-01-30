@@ -14,7 +14,6 @@ const Root = () => {
       <main className="flex-1 max-w-screen-2xl mx-auto ">
         <Outlet />
       </main>
-
       <Footer />
     </div>
   );
