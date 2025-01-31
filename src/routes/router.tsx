@@ -20,12 +20,6 @@ import Support from "../pages/Support.tsx";
 import FAQ from "../pages/FAQ.tsx";
 import Settings from "../pages/Settings.tsx";
 
-
-
-
-
-
-
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -33,14 +27,6 @@ export const router = createBrowserRouter([
         errorElement: "/",
         children: [
             { index: true, element: <Home /> },
-            { path: "/login", element: <Login /> },
-            { path: "/register", element: <Register /> },
-            {
-                path: "/about", element:
-                    <ProtectedRoutes>
-                        <About />
-                    </ProtectedRoutes>
-            },
             {
                 path: "/dashboard", element:
                     <ProtectedRoutes>
