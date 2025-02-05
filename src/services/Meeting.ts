@@ -1,4 +1,7 @@
 
+import axios from 'axios';
+import config from './config';
+
 // types
 
 export enum MeetingType {
@@ -55,3 +58,45 @@ export interface MeetingComment {
     date: Date;
     note?: string;
 }
+
+
+const meeting = {
+    async meetingFilterByDates(patientId: string): Promise<Meeting> {
+      try {
+        const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching patient info:', error);
+        throw error;
+      }
+    },
+    async meetingFilterByPatientId(patientId: string): Promise<Meeting> {
+        try {
+          const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
+          return response.data;
+        } catch (error) {
+          console.error('Error fetching patient info:', error);
+          throw error;
+        }
+    },
+    async meetingFilterByPatientIdAndDates(patientId: string): Promise<Meeting> {
+        try {
+            const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching patient info:', error);
+            throw error;
+        }
+    },
+      async meetingFilterByPatientName(patientId: string): Promise<Meeting> {
+        try {
+          const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
+          return response.data;
+        } catch (error) {
+          console.error('Error fetching patient info:', error);
+          throw error;
+        }
+      },
+  };
+  
+  export default meeting;
