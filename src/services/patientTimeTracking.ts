@@ -2,20 +2,21 @@ import axios from 'axios';
 import config from './config';
 
 interface PatientTimeTracking {
-    id: string;
-    userID: string;
-    patientID: string;
-    patientName: string;
-    patientDOB: Date;
-    patientGender: string;
-    patientEmail: string;
-    providers: string[];
-    providerURL: string;
-    treatmentDate: Date;
-    startTime: Date;
-    endTime: Date;
-    userIDs?: string[];
-    features?: string[];
+  id: string;
+  createdAt?: Date,
+  userID: string;
+  patientID: string;
+  patientName: string;
+  patientDOB: Date;
+  patientGender: string;
+  patientEmail: string;
+  providers: string[];
+  providerURL: string;
+  treatmentDate: Date;
+  startTime: Date;
+  endTime: Date;
+  userIDs?: string[];
+  features?: string[];
 }
 
 const patientTimeTracking = {

@@ -2,20 +2,20 @@ import axios from 'axios';
 import config from './config';
 
 interface PatientInfo {
-    id: string;
-    createdAt?: Date,
-    firstName?: string;
-    lastName?: string;
-    organizationId?: string;
-    gender?: string;
-    dob?: Date;
-    email?: string;
-    mobile?: string;
-    phone?: string;
-    postalCode?: string;
-    behavidencePaitentCode?: string;
-    medicalPlatformsIds?: string[];
-    whiteLabelsPlatformsIds?: string[];
+  id: string;
+  createdAt?: Date,
+  name?: string;
+  organizationId?: string;
+  gender?: string;
+  dob?: Date | null;
+  email?: string;
+  mobile?: string;
+  phone?: string;
+  zip?: string;
+  behavidencePatientCode?: string;
+  medicalPlatformsIds?: string[];
+  whiteLabelsPlatformsIds?: string[];
+  registrationByUserId?: string;
 }
 
 const patientInfo = {

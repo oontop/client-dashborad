@@ -1,5 +1,5 @@
-import patientInfo from './patientInfo';
-import patientTimeTracking from './patientTimeTracking'; 
+import patientInfo from './PatientInfo';
+import patientTimeTracking from './PatientTimeTracking'; 
 
 export {
     patientInfo,
