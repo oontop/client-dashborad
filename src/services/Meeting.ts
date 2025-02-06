@@ -3,7 +3,6 @@ import axios from 'axios';
 import config from './config';
 
 // types
-
 export enum MeetingType {
     NONE = 0,
     CCM = 1,
@@ -60,43 +59,60 @@ export interface MeetingComment {
 }
 
 
-const meeting = {
-    async meetingFilterByDates(patientId: string): Promise<Meeting> {
-      try {
-        const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
-        return response.data;
-      } catch (error) {
-        console.error('Error fetching patient info:', error);
-        throw error;
-      }
-    },
-    async meetingFilterByPatientId(patientId: string): Promise<Meeting> {
+const meetingService = {
+    async meetingFilterByDates(registrationByUserId: string, startDate: Date, endDate: Date): Promise<Meeting[]> {
         try {
-          const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
-          return response.data;
-        } catch (error) {
-          console.error('Error fetching patient info:', error);
-          throw error;
-        }
-    },
-    async meetingFilterByPatientIdAndDates(patientId: string): Promise<Meeting> {
-        try {
-            const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
+            const response = await axios.post<Meeting[]>(`${config.baseUrl}/meeting/filter/dates`, {
+                registrationByUserId, 
+                startDate, 
+                endDate
+            });
             return response.data;
         } catch (error) {
-            console.error('Error fetching patient info:', error);
+            console.error('Error fetching meetings:', error);
             throw error;
         }
     },
-      async meetingFilterByPatientName(patientId: string): Promise<Meeting> {
+    async meetingFilterByPatientId(registrationByUserId: string, internalPlatformPatientId: string): Promise<Meeting[]> {
         try {
-          const response = await axios.get<Meeting>(`${config.baseUrl}/meeting/${patientId}`);
-          return response.data;
+            const response = await axios.post<Meeting[]>(`${config.baseUrl}/meeting/filter/patient-id`, {
+                registrationByUserId,
+                internalPlatformPatientId
+            });
+            return response.data;
         } catch (error) {
-          console.error('Error fetching patient info:', error);
-          throw error;
+            console.error('Error fetching meetings:', error);
+            throw error;
         }
-      },
-  };
+    },
+    async meetingFilterByPatientIdAndDates(registrationByUserId: string, internalPlatformPatientId: string, startDate: Date, endDate: Date): Promise<Meeting[]> {
+        try {
+            const response = await axios.post<Meeting[]>(`${config.baseUrl}/meeting/filter/patient-dates`, {
+                registrationByUserId,
+                internalPlatformPatientId,
+                startDate,
+                endDate
+            });
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching meetings:', error);
+            throw error;
+        }
+    },
+    async meetingFilterByPatientName(registrationByUserId: string, patientName: string, startDate: Date, endDate: Date): Promise<Meeting[]> {
+        try {
+            const response = await axios.post<Meeting[]>(`${config.baseUrl}/meeting/filter/patient-name`, {
+                registrationByUserId,
+                patientName,
+                startDate,
+                endDate
+            });
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching meetings:', error);
+            throw error;
+        }
+    }
+};
   
-  export default meeting;
+  export default meetingService;

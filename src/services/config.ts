@@ -3,7 +3,9 @@ export interface Config {
   }
   
   const config: Config = {
-    baseUrl: 'http://localhost:8080/api/v1',
+    // update to service options 
+    // baseUrl: 'https://api.oontop.com/api/v1',
+    baseUrl: 'http://localhost:6001/api/v1',
   };
   
   export default config;
