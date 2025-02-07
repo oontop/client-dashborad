@@ -99,13 +99,11 @@ const meetingService = {
             throw error;
         }
     },
-    async meetingFilterByPatientName(registrationByUserId: string, patientName: string, startDate: Date, endDate: Date): Promise<Meeting[]> {
+    async meetingFilterByPatientName(registrationByUserId: string, patientName: string): Promise<Meeting[]> {
         try {
             const response = await axios.post<Meeting[]>(`${config.baseUrl}/meeting/filter/patient-name`, {
                 registrationByUserId,
                 patientName,
-                startDate,
-                endDate
             });
             return response.data;
         } catch (error) {

@@ -4,23 +4,7 @@ import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import MonthlyDisplay from '../components/MonthlyDisplay';
 
 const Dashboard: React.FC = () => {
-
-    // const { user } = useUser();
-    // console.log("🚀 ~ user:", user)
-
-    // const { patients, loading, error } = usePatients();
-
-    // const [openCardIndex, setOpenCardIndex] = useState<number | null>(null);
-
-    // if (loading) {
-    //     return <div>Loading...</div>;
-    // }
-
-    // if (error) {
-    //     return <div>Error: {error}</div>;
-    // }
-
-
+   
     return (
         <div className="p-6 bg-gray-100 min-h-screen">
              <SignedIn>
