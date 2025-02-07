@@ -174,15 +174,15 @@ const MonthlyDisplay: React.FC = () => {
             {meetings.length > 0 && <div className="overflow-x-auto">
                 <div className="min-w-full bg-white">
                     <div className="grid grid-cols-4 gap-4 border-b border-gray-200 py-2 px-4">
-                        <div>Date</div>
-                        <div>Time</div>
-                        <div>Name</div>
-                        <div>Date of birth</div>
+                        <div>Meeting Date</div>
+                        <div>Meeting Time</div>
+                        <div>Patient Name</div>
+                        <div>Patient Date of birth</div>
                     </div>
                         {meetings.map((meeting, index) => 
                             <div key={`patient-${index}`}  className="grid grid-cols-4 gap-4 border-b border-gray-200 py-2 px-4">
                                 <div>{meeting.startDate ? meeting.startDate.toLocaleDateString() : 'N/A'}</div>
-                                <div>{meeting.endDate ? meeting.endDate.toLocaleDateString() : 'N/A'}</div>
+                                <div>{meeting.totalTime ? `${Math.floor(meeting.totalTime / 3600)}h ${Math.floor((meeting.totalTime % 3600) / 60)}m ${meeting.totalTime % 60}s` : 'N/A'}</div>
                                 <div>{meeting.patientData?.name}</div>
                                 <div>{meeting.patientData?.dob ? new Date(meeting.patientData.dob).toLocaleDateString('en-CA') : 'N/A'}</div>
                             </div>
