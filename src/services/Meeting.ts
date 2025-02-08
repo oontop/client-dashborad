@@ -110,6 +110,20 @@ const meetingService = {
             console.error('Error fetching meetings:', error);
             throw error;
         }
+    },
+    async meetingsToCSV(meetings: Meeting[], name: string, startDate: Date, endDate: Date): Promise<any> {
+        try {
+            const response = await axios.post<Meeting[]>(`${config.baseUrl}/meeting/csv`, {
+                meetings,
+                name,
+                startDate,
+                endDate 
+            });
+            return response.data;
+        } catch (error) {
+            console.error('Error exporting meetings to CSV:', error);
+            throw error;
+        }
     }
 };
   

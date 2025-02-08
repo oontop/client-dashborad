@@ -9,28 +9,6 @@ enum SearchMode {
     ByPatientNameAndDates = 3
 }
 
-// {meetings.map((meeting, index) => {
-//     console.log("🚀 ~ {meetings.map ~ meeting:", meeting)
-    
-//     return <div key={index} className="grid grid-cols-4 gap-4 border-b border-gray-200 py-2 px-4 hover:bg-gray-100">
-//             <div>{meeting.patientData.name} </div>
-//             {/* <div>{meeting?.startDate ? new Date(meeting.startDate).toLocaleDateString() : 'N/A'}</div>
-//             <div>{meeting?.endDate ? new Date(meeting.endDate).toLocaleDateString() : 'N/A'}</div>
-//             <div>{meeting?.patientData.name}</div>
-//             <div>{meeting?.patientData.dob ? new Date(meeting.patientData.dob).toLocaleDateString() : 'N/A'}</div> */}
-//         </div>
-//     }
-// )}
-// {/* {meetings.map((meeting, index) => (
-//     <div key={index} className="grid grid-cols-4 gap-4 border-b border-gray-200 py-2 px-4 hover:bg-gray-100">
-//         <div>{meeting.startDate ? meeting.startDate.toLocaleDateString() : 'N/A'}</div>
-//         <div>{meeting.endDate ? meeting.endDate.toLocaleDateString() : 'N/A'}</div>
-//         <div>{meeting.patientData.name}</div>
-//         <div>{meeting.patientData.dob!.toLocaleDateString()}</div>
-//     </div>
-// ))} */}
-
-
 const MonthlyDisplay: React.FC = () => {
     const [patientName, setPatientName] = useState<string>('');
     const [startDate, setStartDate] = useState<Date>(new Date());
@@ -62,14 +40,21 @@ const MonthlyDisplay: React.FC = () => {
                     ...meeting,
                     startDate: new Date(meeting.startDate || new Date()),
                     endDate: new Date(meeting.endDate || new Date()),
-                    // patientData: {
-                    //     ...meeting.patientData,
-                    //     dob: meeting.patientData?.dob ? new Date(meeting.patientData.dob) : null
-                    // }
                 })
             ));
             
         }
+    };
+
+    const csvBackend = async () => {
+        const csvData = await meetingService.meetingsToCSV(meetings, patientName, startDate, endDate);
+        const blob = new Blob([csvData], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.setAttribute('href', url);
+        a.setAttribute('download', 'meetings.csv');
+        a.click();
+        window.URL.revokeObjectURL(url);
     };
     
     return (
@@ -188,6 +173,14 @@ const MonthlyDisplay: React.FC = () => {
                             </div>
                         )}
                 </div>
+                <div>
+                <button
+                    onClick={csvBackend}
+                    className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+                >
+                    Create Csv and download
+                </button>
+            </div>
             </div>}
             
         </div>
