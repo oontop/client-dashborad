@@ -96,7 +96,7 @@ const MonthlyDisplay: React.FC = () => {
                     <span>Patient Name</span>
                 </label>
                 <input
-                    id="search-input"
+                    id="patient-name"
                     type="text"
                     value={patientName}
                     onChange={(e) => setPatientName(e.target.value)}
@@ -108,6 +108,7 @@ const MonthlyDisplay: React.FC = () => {
             <div className="mb-4">
                 <label className="flex items-center space-x-2 text-blue-600">
                     <input
+                        defaultChecked
                         type="radio"
                         name="searchType"
                         value="byDates"
@@ -138,7 +139,6 @@ const MonthlyDisplay: React.FC = () => {
                         type="radio"
                         name="searchType"
                         value="byPatientNameAndDates"
-                        defaultChecked
                         onChange={() => {
                             setPatientName('');
                             setSearchMode(SearchMode.ByPatientNameAndDates);
