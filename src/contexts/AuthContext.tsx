@@ -16,9 +16,9 @@ export const AuthContext = createContext<AuthContextType>({
 
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isBusiness, setisBusiness] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isBusiness, setisBusiness] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
 
     useEffect(() => {
         const token = localStorage.getItem('token');

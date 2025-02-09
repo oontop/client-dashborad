@@ -1,7 +1,7 @@
 ///usePatient.ts
 import { useEffect, useState } from "react";
 import { IPatient } from "../@types/types";
-import { getPatients } from "../services/patients";
+import { getPatients } from "../services/PatientTimeTracking";
 
 export const usePatients = () => {
     const [patients, setPatients] = useState<IPatient[]>([]);
