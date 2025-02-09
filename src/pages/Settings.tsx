@@ -16,10 +16,12 @@ const Settings = () => {
     const handleUriChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newUri = event.target.value;
         setServerUri(newUri);
+    };
 
+    const handleSaveConfig = () => {
         // Update the config object and save it to local storage
         const config: Config = getConfig();
-        config.baseUrl = newUri;
+        config.baseUrl = serverUri;
         updateConfig(config);
     };
 
@@ -35,6 +37,7 @@ const Settings = () => {
                     onChange={handleUriChange}
                 />
             </div>
+            <button onClick={handleSaveConfig}>Save Config</button>
         </div>
     );
 };
