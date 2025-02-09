@@ -38,10 +38,6 @@
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 
-Eliyahu Levi  
-Email: [eliyahuofficialmusic@gmail.com](mailto:eliyahuofficialmusic@gmail.com)  
-LinkedIn: [linkedin.com/in/eliyahuofficial](https://www.linkedin.com/in/eliyahuofficial/)
-
 ---
 
 © 2024 Eliyahu Levi All Rights Reserved.
