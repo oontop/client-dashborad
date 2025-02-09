@@ -17,7 +17,6 @@
 - **Chart.js**: Flexible JavaScript charting library.
 - **React Chart.js 2**: React wrapper for Chart.js.
 
-
 ### Development Tools
 
 - **ESLint**: Find and fix problems in your JavaScript code.
@@ -26,18 +25,15 @@
 - **PostCSS**: Tool for transforming CSS with JavaScript plugins.
 - **Autoprefixer**: PostCSS plugin to parse CSS and add vendor prefixes.
 
-
 ## Getting Started
 
 1. **Install Dependencies**: Run `npm i` to install all required dependencies.
 2. **Run the Client**: Use `npm run dev` to start the client on baseUrl = "http://localhost:8080/api/v1".
 
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-
 ---
 
-© 2024 Eliyahu Levi All Rights Reserved.
+© 2025 OONTOP-Health All Rights Reserved.
