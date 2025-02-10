@@ -1,13 +1,13 @@
 import { config, getConfig, updateConfig, type Config } from './config';
 import patientInfo from './patientInfo';
 import patientTimeTracking from './patientTimeTracking'; 
-
-import meeting from "./meeting";
+import meetingService, {type Meeting} from "./meeting";
 
 export {
     patientInfo,
     patientTimeTracking,
-    meeting,
+    meetingService,
+    Meeting,
     config,
     getConfig,
     updateConfig,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaCalendarAlt, FaUser } from 'react-icons/fa';
-import meetingService, {type Meeting} from '../services/meeting';
+import { meetingService, type Meeting } from '../services';
 import { useUser } from "@clerk/clerk-react";
 
 enum SearchMode {
