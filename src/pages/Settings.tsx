@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { config, Config, getConfig, updateConfig } from "../services/";
+import { Config, getConfig, updateConfig } from "../services/";
 
 
 const Settings = () => {

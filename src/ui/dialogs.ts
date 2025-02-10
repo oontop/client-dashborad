@@ -36,10 +36,10 @@ export const showErrorDialog = (title: string, text: string) => {
 
 
 
-export const showSuccessCreate = (title: string, text: string) => {
+export const showSuccessCreate = (title?: string, text?: string) => {
     return Swal.fire({
-        title: "Your work has been saved",
-
+        title: title,
+        text: text,
         position: "top-end",
         icon: "success",
         iconColor: "#3160fa",

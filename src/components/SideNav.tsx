@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import { useMenu } from '../contexts/MenuContext';
-import { FiUser, FiSettings, FiLogIn, FiUserPlus, FiChevronDown, FiHome, FiGrid, FiHelpCircle, FiInfo, FiPhone, FiFileText } from 'react-icons/fi';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from "../hooks/useAuth";
+import { FiUser, FiSettings, FiHome, FiHelpCircle, FiInfo, FiPhone, FiFileText, FiChevronDown } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const SideNav = () => {
   const { isOpen, toggleMenu } = useMenu();
   const [isAccountOpen, setIsAccountOpen] = useState(false);
 
-  const { isLoggedIn, isBusiness, logout } = useAuth();
-
-  const navigate = useNavigate();
 
   const toggleAccountNav = () => {
     setIsAccountOpen(!isAccountOpen);
@@ -36,24 +32,10 @@ const SideNav = () => {
                 <Link to="/" onClick={toggleMenu}>Home</Link>
               </li>
 
-              {isLoggedIn && isBusiness &&
-                <li className="p-4 hover:bg-blue-100 flex items-center">
-                  <FiGrid className="w-6 h-6 mr-2 text-blue-600" />
-                  <Link to="/dashboard" onClick={toggleMenu}>Dashboard</Link>
-                </li>
-              }
-              {isLoggedIn &&
-                <li className="p-4 hover:bg-blue-100 flex items-center">
-                  <FiUser className="w-6 h-6 mr-2 text-blue-600" />
-                  <Link to="/profile" onClick={toggleMenu}>Profile</Link>
-                </li>
-              }
-
               <li className="p-4 hover:bg-blue-100 flex items-center">
                 <FiSettings className="w-6 h-6 mr-2 text-blue-600" />
                 <Link to="/settings" onClick={toggleMenu}>Settings</Link>
               </li>
-
 
               <li className="p-4 hover:bg-blue-100 flex items-center">
                 <FiInfo className="w-6 h-6 mr-2 text-blue-600" />
@@ -102,25 +84,7 @@ const SideNav = () => {
                 </button>
                 {isAccountOpen && (
                   <ul className="pl-8 mt-2">
-                    {!isLoggedIn &&
-                      <li className="p-2 hover:bg-blue-100 flex items-center">
-                        <FiLogIn className="w-4 h-4 mr-2 text-gray-700" />
-                        <Link to="/login" onClick={toggleMenu}>Login</Link>
-                      </li>
-                    }
-                    {!isLoggedIn &&
-                      <li className="p-2 hover:bg-blue-100 flex items-center">
-                        <FiUserPlus className="w-4 h-4 mr-2 text-gray-700" />
-                        <Link to="/register" onClick={toggleMenu}>Register</Link>
-                      </li>
-                    }
-
-                    {isLoggedIn && (
-                      <button onClick={() => {
-                        logout();
-                        navigate("/login");
-                      }} className="nav-link text-sm md:text-base lg:text-lg slate">Logout</button>
-                    )}
+                  
                   </ul>
                 )}
               </li>

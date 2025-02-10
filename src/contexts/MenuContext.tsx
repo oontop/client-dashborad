@@ -1,6 +1,9 @@
 import { createContext, useState, ReactNode, useContext } from 'react';
-import { MenuContextProps } from '../@types/types';
 
+export interface MenuContextProps {
+  isOpen: boolean;
+  toggleMenu: () => void;
+}
 
 const MenuContext = createContext<MenuContextProps | undefined>(undefined);
 
